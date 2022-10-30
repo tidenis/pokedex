@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbArrowBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:title=""
+        app:navigationIcon="@drawable/ic_arrow_back_36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/svPokemonData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <LinearLayout
+            android:id="@+id/llPokemonDataScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivPokemonImage"
+                android:layout_width="1000px"
+                android:layout_height="900px"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/llPokemonDataScrollView"
+                app:layout_constraintStart_toStartOf="@+id/llPokemonDataScrollView"
+                app:layout_constraintTop_toTopOf="@+id/llPokemonDataScrollView"
+                tools:src="@drawable/greninja" />
+
+            <TextView
+                android:id="@+id/tvPokemonNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ivPokemonImage"
+                app:layout_constraintTop_toBottomOf="@+id/ivPokemonImage"
+                tools:text="Nº 001" />
+
+            <TextView
+                android:id="@+id/tvPokemonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="1dp"
+                android:layout_gravity="center"
+                android:paddingBottom="1dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tvPokemonNumber"
+                app:layout_constraintStart_toStartOf="@+id/tvPokemonNumber"
+                app:layout_constraintTop_toBottomOf="@+id/tvPokemonNumber"
+                tools:text="Greninja" />
+
+            <LinearLayout
+                android:id="@+id/llPokemonData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPokemonName">
+                <TextView
+                    android:id="@+id/tvPokemonType1"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+                    tools:text="Água" />
+
+                <TextView
+                    android:id="@+id/tvPokemonType2"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+                    tools:text="Fogo" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvBaseStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_horizontal"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Base Stats"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llPokemonData" />
+
+            <TableLayout
+                android:id="@+id/tlPokemonBaseStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBaseStats">
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPokemonHpStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:text="HP"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"/>
+
+                    <TextView
+                        android:id="@+id/tvValuePokemonHpStat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+                        tools:text="125" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarHp"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="255dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:backgroundTintMode="src_in"
+                        android:max="@string/ValueMaxProgressBar"
+                        android:progress="125"
+                        android:progressBackgroundTint="@color/colorTransparent"
+                        android:progressTint="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPokemonAttackStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:text="Attack"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tvPokemonHpStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonHpStat"/>
+
+                    <TextView
+                        android:id="@+id/tvValuePokemonAttackStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonHpStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonHpStat"
+                        tools:text="150" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarAttack"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:backgroundTintMode="add"
+                        android:max="@string/ValueMaxProgressBar"
+                        android:progress="150"
+                        android:progressBackgroundTint="@color/colorTransparent"
+                        android:progressTint="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPokemonDefenseStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:text="Defense"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tvPokemonAttackStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonAttackStat"/>
+
+                    <TextView
+                        android:id="@+id/tvValuePokemonDefenseStat"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonHpStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonHpStat"
+                        tools:text="55" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarDefense"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:backgroundTintMode="add"
+                        android:max="@string/ValueMaxProgressBar"
+                        android:progress="55"
+                        android:progressBackgroundTint="@color/colorTransparent"
+                        android:progressTint="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPokemonSpAttackStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:text="Sp. Atk"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tvPokemonDefenseStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonDefenseStat"/>
+
+                    <TextView
+                        android:id="@+id/tvValuePokemonSpAttackStat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+                        tools:text="110" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSpAttack"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:backgroundTintMode="add"
+                        android:max="@string/ValueMaxProgressBar"
+                        android:progress="110"
+                        android:progressBackgroundTint="@color/colorTransparent"
+                        android:progressTint="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPokemonSpDefenseStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:text="Sp. Def"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tvPokemonSpAttackStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonSpAttackStat"/>
+
+                    <TextView
+                        android:id="@+id/tvValuePokemonSpDefenseStat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+                        tools:text="80" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSpDefense"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:backgroundTintMode="add"
+                        android:max="@string/ValueMaxProgressBar"
+                        android:progress="80"
+                        android:progressBackgroundTint="@color/colorTransparent"
+                        android:progressTint="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPokemonSpeedStat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:text="Speed"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tvPokemonSpDefenseStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonSpDefenseStat"/>
+
+                    <TextView
+                        android:id="@+id/tvValuePokemonSpeedStat"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonSpDefenseStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonSpDefenseStat"
+                        tools:text="190" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSpeed"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:backgroundTintMode="add"
+                        android:max="@string/ValueMaxProgressBar"
+                        android:progress="190"
+                        android:progressBackgroundTint="@color/colorTransparent"
+                        android:progressTint="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                <TextView
+                    android:id="@+id/tvTotalStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="right"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:text="Total"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvPokemonHpStat"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPokemonHpStat"/>
+
+                    <TextView
+                        android:id="@+id/tvValueTotalStats"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvPokemonHpStat"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPokemonHpStat"
+                        tools:text="500" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
