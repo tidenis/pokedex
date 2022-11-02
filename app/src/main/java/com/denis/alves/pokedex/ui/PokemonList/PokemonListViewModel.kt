@@ -11,7 +11,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PokemonListViewModel() : ViewModel() {
+class PokemonListViewModel : ViewModel() {
     private val retrofit = Retrofit.Builder()
         .baseUrl("https://pokeapi.co/api/v2/")
         .addConverterFactory(GsonConverterFactory.create())
@@ -19,9 +19,10 @@ class PokemonListViewModel() : ViewModel() {
 
     private val service: PokemonApi = retrofit.create(PokemonApi::class.java)
 
-    var pokemonList = MutableLiveData<List<PokemonResult>>()
+    var pokemonListComplete = MutableLiveData<List<PokemonResult>>()
+    var pokemonList : MutableList<PokemonResult> = arrayListOf()
 
-    fun getPokemonList(limit: Int) {
+    fun getPokemonList(limit: Int){
         val call = service.getPokemonList(limit, 0)
 
         call.enqueue(object : Callback<PokemonResponse> {
@@ -29,9 +30,21 @@ class PokemonListViewModel() : ViewModel() {
                 call: Call<PokemonResponse>,
                 response: Response<PokemonResponse>
             ) {
-                response.body()?.results?.let { list ->
-                    pokemonList.postValue(list)
+                pokemonList = response.body()!!.results
+
+                var pokemonId = 0
+
+                while(pokemonId < limit)
+                {
+                    pokemonList
+                    pokemonList[pokemonId].number = pokemonId + 1
+
+                    pokemonList[pokemonId].url.replace("https://pokeapi.co/api/v2/pokemon/", "")
+                    pokemonList[pokemonId].url.replace("/", "")
+                    pokemonList[pokemonId].url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId+1}.png"
+                    pokemonId++
                 }
+                pokemonListComplete.postValue(pokemonList)
             }
 
             override fun onFailure(call: Call<PokemonResponse>, t: Throwable) {
