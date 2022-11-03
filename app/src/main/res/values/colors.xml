@@ -5,6 +5,7 @@
     <color name="colorStatsBetween100And119">#A0E515</color>
     <color name="colorStatsBetween120And149">#23CD5E</color>
     <color name="colorStatsMoreThan149">#00C2b8</color>
+    <color name="colorBackGround">#B3AFAF</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
