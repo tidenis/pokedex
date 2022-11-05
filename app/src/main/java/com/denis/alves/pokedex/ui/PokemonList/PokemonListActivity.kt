@@ -1,5 +1,6 @@
 package com.denis.alves.pokedex.ui.PokemonList
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
@@ -7,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.denis.alves.pokedex.R
 import com.denis.alves.pokedex.model.PokemonResult
 import com.denis.alves.pokedex.ui.PokemonData.PokemonDataActivity
@@ -18,6 +18,7 @@ class PokemonListActivity : AppCompatActivity()
     val limit = 151
     private lateinit var viewModel : PokemonListViewModel
     private lateinit var searchView: SearchView
+    lateinit var progressDialog : ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
