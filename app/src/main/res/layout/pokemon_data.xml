@@ -188,9 +188,8 @@
                         android:layout_marginTop="9dp"
                         android:backgroundTintMode="src_in"
                         android:max="@string/ValueMaxProgressBar"
-                        android:progress="125"
-                        android:progressBackgroundTint="@color/colorTransparent"
-                        android:progressTint="@color/black" />
+                        android:progressBackgroundTint="@color/colorTransparent" />
+
                 </TableRow>
 
                 <TableRow>
@@ -235,9 +234,8 @@
                         android:layout_marginTop="9dp"
                         android:backgroundTintMode="add"
                         android:max="@string/ValueMaxProgressBar"
-                        android:progress="150"
-                        android:progressBackgroundTint="@color/colorTransparent"
-                        android:progressTint="@color/black" />
+                        android:progressBackgroundTint="@color/colorTransparent"/>
+
                 </TableRow>
 
                 <TableRow>
@@ -282,9 +280,8 @@
                         android:layout_marginTop="9dp"
                         android:backgroundTintMode="add"
                         android:max="@string/ValueMaxProgressBar"
-                        android:progress="55"
-                        android:progressBackgroundTint="@color/colorTransparent"
-                        android:progressTint="@color/black" />
+                        android:progressBackgroundTint="@color/colorTransparent"/>
+
                 </TableRow>
 
                 <TableRow>
@@ -329,9 +326,8 @@
                         android:layout_marginTop="9dp"
                         android:backgroundTintMode="add"
                         android:max="@string/ValueMaxProgressBar"
-                        android:progress="110"
-                        android:progressBackgroundTint="@color/colorTransparent"
-                        android:progressTint="@color/black" />
+                        android:progressBackgroundTint="@color/colorTransparent"/>
+
                 </TableRow>
 
                 <TableRow>
@@ -376,9 +372,8 @@
                         android:layout_marginTop="9dp"
                         android:backgroundTintMode="add"
                         android:max="@string/ValueMaxProgressBar"
-                        android:progress="80"
-                        android:progressBackgroundTint="@color/colorTransparent"
-                        android:progressTint="@color/black" />
+                        android:progressBackgroundTint="@color/colorTransparent"/>
+
                 </TableRow>
 
                 <TableRow>
@@ -424,9 +419,8 @@
                         android:layout_marginRight="8dp"
                         android:backgroundTintMode="add"
                         android:max="@string/ValueMaxProgressBar"
-                        android:progress="190"
-                        android:progressBackgroundTint="@color/colorTransparent"
-                        android:progressTint="@color/black" />
+                        android:progressBackgroundTint="@color/colorTransparent"/>
+
                 </TableRow>
 
                 <TableRow>
