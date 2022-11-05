@@ -1,6 +1,5 @@
 package com.denis.alves.pokedex.ui.PokemonList
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
@@ -18,7 +17,6 @@ class PokemonListActivity : AppCompatActivity()
     val limit = 151
     private lateinit var viewModel : PokemonListViewModel
     private lateinit var searchView: SearchView
-    lateinit var progressDialog : ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
