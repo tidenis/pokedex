@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.denis.alves.pokedex.R
 import com.denis.alves.pokedex.model.PokemonResult
 import com.denis.alves.pokedex.ui.PokemonData.PokemonDataActivity

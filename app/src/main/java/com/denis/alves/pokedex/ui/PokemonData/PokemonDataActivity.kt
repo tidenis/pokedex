@@ -4,8 +4,6 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -14,7 +12,6 @@ import com.bumptech.glide.Glide
 import com.denis.alves.pokedex.R
 import com.denis.alves.pokedex.model.Pokemon
 import kotlinx.android.synthetic.main.pokemon_data.*
-import kotlinx.android.synthetic.main.pokemon_data.view.*
 
 class PokemonDataActivity : AppCompatActivity() {
 
